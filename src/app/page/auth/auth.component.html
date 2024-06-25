@@ -1,0 +1,7 @@
+@if(auth){
+    <app-login (changePage)="togglePage()" ></app-login>
+}
+@else(){
+    <app-sign-up (changePage)="togglePage()"></app-sign-up>
+
+}

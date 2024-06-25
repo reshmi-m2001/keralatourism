@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let district of districts" (click)="viewDistrictDetails(district.id)">
+            <div class="card mb-4">
+                <div class="image-container">
+                    <img [src]="district.image" class="card-img-top" alt="{{ district.name }}">
+                    <div class="card-body initial-title">
+                        <h5 class="card-title">{{ district.name }}</h5>
+                    </div>
+                    <div class="overlay">
+                        <div class="text">
+                            <h5 class="card-title">{{ district.name }}</h5>
+                            <p class="card-text">{{ district.description }}</p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

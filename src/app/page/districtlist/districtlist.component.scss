@@ -1,0 +1,62 @@
+.card {
+    transition: transform 0.2s; /* Optional: Add some animation on hover */
+    width: 100%; /* Ensure the card takes up the full width of the column */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Optional: Slightly increase size on hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px; /* Increased height for a larger image */
+    object-fit: cover; /* Ensure images cover the entire area */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.initial-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.image-container:hover .initial-title {
+    opacity: 0; /* Hide the initial title on hover */
+}
+
+.text {
+    background: rgba(0, 0, 0, 0.6); /* More transparent background for text */
+    padding: 10px;
+    border-radius: 5px;
+}

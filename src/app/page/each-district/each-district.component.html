@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1 style="font-size: 60px; text-align: center;">{{ districts.name }}</h1>
+
+    <h4 style="font-size: 30px; text-align: center; padding: 20px;">{{ districts.detailDescription }}</h4>
+
+    <div class="card-deck">
+        <!-- Start iterating through placesToVisit -->
+        @for (item of districts.placesToVisit; track item.name) {
+
+        <div class="card mb-3">
+            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }} image">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+            </div>
+        </div>
+
+        <!-- End iterating through placesToVisit -->
+        }
+    </div>
+
+</div>

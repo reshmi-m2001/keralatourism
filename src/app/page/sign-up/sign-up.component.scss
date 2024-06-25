@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  overflow: scroll;
+  background: url('https://images.unsplash.com/photo-1572502006585-8d45f2d2c72b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 20px;
+  overflow: hidden;
+  margin-bottom: 100px;
+  padding-bottom: 160px;
+}
+
+.wrapper {
+  width: 400px;
+  background: #9dede5;
+  padding: 40px;
+  border-radius: 4px;
+  margin-top: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.options{
+    display: flex !important;
+    flex-direction: row;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  color: #0e403b;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  position: relative;
+  width: 100%;
+}
+
+.input-field input {
+  width: 100%;
+//   background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.input-field label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 1em;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  transform: translateY(-15px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.input-field div {
+  display: none;
+}
+
+input:invalid + label + div,
+input.ng-invalid.ng-touched + label + div {
+  display: block;
+  color: red;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #fff;
+}
+
+.options label {
+  margin-right: 10px;
+}
+
+.options input[type="radio"] {
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background: #0e403b;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+//   transition: background 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #0a2f2c;
+}
+
+button[type="submit"]:active {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+button[type="submit"]:focus {
+  outline: 2px solid #0e403b;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .input-field input {
+    padding: 20px 10px 5px;
+  }
+}

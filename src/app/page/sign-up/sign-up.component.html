@@ -1,0 +1,80 @@
+<div class="body">
+<div class="container">
+    <div class="wrapper">
+      <form [formGroup]="signupform" (ngSubmit)="signup()">
+        <h2>Sign-Up</h2>
+        <div class="input-field">
+          <input type="text" formControlName="firstName" required>
+          <label>Enter your user name</label>
+          <div *ngIf="signupform.controls['firstName'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+        </div>
+        <!-- <div class="input-field">
+          <input type="text" formControlName="lastName" required>
+          <label>Enter your last name</label>
+          <div *ngIf="signupform.controls['lastName'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+        </div> -->
+        <div class="input-field">
+          <input type="email" formControlName="email" required>
+          <label>Enter your email</label>
+          <div *ngIf="signupform.controls['email'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+          <div *ngIf="signupform.controls['email'].errors?.['email']" style="color:red;">
+            Please enter a valid email
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="password" formControlName="password" required>
+          <label>Enter your password</label>
+          <div *ngIf="signupform.controls['password'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+          <div *ngIf="signupform.controls['password'].errors?.['minlength']" style="color:red;">
+            Minimum 4 letters required
+          </div>
+          <div *ngIf="signupform.controls['password'].errors?.['maxlength']" style="color:red;">
+            Maximum 10 letters allowed
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="password" formControlName="confirmPassword" required>
+          <label>Re-enter your password</label>
+          <div *ngIf="signupform.hasError('mismatch')" style="color:red;">
+            Passwords do not match
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="tel" formControlName="phone" required>
+          <label>Enter your phone number</label>
+          <div *ngIf="signupform.controls['phone'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+          <div *ngIf="signupform.controls['phone'].errors?.['pattern']" style="color:red;">
+            Please enter a valid phone number
+          </div>
+        </div>
+        <div class="options">
+          <label>Gender</label>
+          <input type="radio" id="male" formControlName="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" formControlName="gender" value="female">
+          <label for="female">Female</label>
+          <input type="radio" id="other" formControlName="gender" value="other">
+          <label for="other">Other</label>
+         
+        </div>
+        <div *ngIf="signupform.controls['gender'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+        <button type="submit" [disabled]="signupform.invalid" value="SignUp">Sign Up</button>
+        <div class="text">
+            <p>Already have an account? <a class="text-primary" (click)="emitChange()">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

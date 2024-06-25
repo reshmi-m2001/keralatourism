@@ -1,0 +1,51 @@
+<div class="body">
+<div class="container">
+    <div class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6_5ck6Yem53wC5wOWQADAcN5SP3eWIdW-pw&s" alt="Logo">
+      
+    </div>
+    <div class="wrapper">
+      <form [formGroup]="loginform" (ngSubmit)="login()">
+        <h2>Login</h2>
+        <div class="input-field">
+          <input type="email" formControlName="email" required>
+          <label>Enter your email</label>
+          <div *ngIf="loginform.controls['email'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+          <div *ngIf="loginform.controls['email'].errors?.['minlength']" style="color:red;">
+            Minimum 4 letters required
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="password" formControlName="password" required>
+          <label>Enter your password</label>
+          <div *ngIf="loginform.controls['password'].errors?.['required']" style="color:red;">
+            This is a required field
+          </div>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember">
+            <p>Remember me</p>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" [disabled]="loginform.invalid" value="Login" >Log In</button>
+        <div class="register">
+          <p>Don't have an account? <a (click)="emitChange()">Register</a></p>
+        </div>
+      </form>
+      <p>&copy; 2024 Kerala Tourism. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy </a>
+        <a href="#">| Terms of Service</a>
+      </div>
+    </div>
+    <!-- <footer> -->
+      
+    <!-- </footer> -->
+  </div>
+</div>
+  
+
